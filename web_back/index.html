@@ -197,6 +197,7 @@
     <script>
       // 获取用户信息
       $(function(){
+        // user.getInfo(function(res){
         $.get("http://localhost:8000/admin/getuser",function(res){
           console.log(res);
           $('#userName').html(res.data.nickname);
@@ -208,7 +209,8 @@
     $('#btnLogout').click(function(){
       $('.modal').modal('show');
       $('#btn').click(function(){
-        $.post("http://localhost:8000/admin/logout",function(res){
+        user.logout(function(res){
+        // $.post("http://localhost:8000/admin/logout",function(res){
           // console.log(res);
           if(res.code === 200){
             window.location.href = "./login.html";
