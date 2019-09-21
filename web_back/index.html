@@ -197,8 +197,8 @@
     <script>
       // 获取用户信息
       $(function(){
-        // user.getInfo(function(res){
-        $.get("http://localhost:8000/admin/getuser",function(res){
+        user.getInfo(function(res){
+        // $.get("http://localhost:8000/admin/getuser",function(res){
           console.log(res);
           $('#userName').html(res.data.nickname);
           $('#userImg').attr("src",res.data.user_pic);
