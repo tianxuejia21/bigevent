@@ -195,6 +195,16 @@
     
     
     <script>
+      // 获取用户信息
+      $(function(){
+        $.get("http://localhost:8000/admin/getuser",function(res){
+          console.log(res);
+          $('#userName').html(res.data.nickname);
+          $('#userImg').attr("src",res.data.user_pic);
+        })
+      })
+
+    // 退出功能
     $('#btnLogout').click(function(){
       $('.modal').modal('show');
       $('#btn').click(function(){
